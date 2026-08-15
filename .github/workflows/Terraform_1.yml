@@ -27,17 +27,17 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Terraform Init
-        working-directory: ./environment/dev
+        working-directory: ./enviornment/dev
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: ./environment/dev
+        working-directory: ./enviornment/dev
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: ./environment/dev
+        working-directory: ./enviornment/dev
         run: terraform plan -out=tfplan
 
       - name: Terraform Apply
-        working-directory: ./environment/dev
+        working-directory: ./enviornment/dev
         run: terraform apply -auto-approve tfplan
